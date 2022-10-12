@@ -1,0 +1,32 @@
+
+if [ "setup" == $1 ]; then
+    echo "Running setup"
+    # Replace this with any commands you need to setup your code
+    # For example:
+    # pip install -r requirements.txt
+    pip install virtualenv
+    virtualenv venvv
+    source venvv/bin/activate
+    pip install django
+    pip install -r requirements/dev.txt
+    exit;
+fi
+
+if [ "upgrade" == $1 ]; then
+    echo "Upgrading with args: ${@:2}"
+    # Use this line to call your code
+    chmod +x main.py
+    python3 main.py upgrade ${@:2}
+    exit;
+fi
+
+if [ "downgrade" == $1 ]; then
+    echo "Downgrading with args: ${@:2}"
+    # Use this line to call your code
+    chmod +x main.py
+    python3 main.py downgrade ${@:2}
+    exit;
+fi
+
+echo "Your first argument must be either 'setup', 'upgrade' or 'downgrade'"
+exit 5;
