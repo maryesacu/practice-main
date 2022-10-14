@@ -4,9 +4,6 @@ if [ "setup" == $1 ]; then
     # Replace this with any commands you need to setup your code
     # For example:
     # pip install -r requirements.txt
-    pip install virtualenv
-    virtualenv venvv
-    source venvv/bin/activate
     pip install django
     pip install -r requirements/dev.txt
     exit;
