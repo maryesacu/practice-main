@@ -32,11 +32,6 @@ jobs:
     - name: Setup the cli
       run: |
         cd 02_your_code
-        pip install virtualenv
-        virtualenv venvv
-        source venvv/bin/activate
-        pip install django
-        pip install -r requirements/dev.txt
         ./cli setup
     - name: Run cli tests
       run: |
